@@ -1,0 +1,53 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 1139 >>
+stream
+BT /F2 20 Tf 60 780 Td (Analyse : le blues en 12 mesures) Tj ET
+0.2 0.4 0.8 RG 2 w 60 768 m 535 768 l S
+BT /F2 14 Tf 60 732 Td (La grille de base \(degrés\)) Tj ET
+BT /F1 11 Tf 60 711 Td (Mesures 1 à 4  :  I    I    I    I) Tj ET
+BT /F1 11 Tf 60 693 Td (Mesures 5 à 8  :  IV   IV   I    I) Tj ET
+BT /F1 11 Tf 60 675 Td (Mesures 9 à 12 :  V    IV   I    V  \(turnaround\)) Tj ET
+BT /F2 14 Tf 60 649 Td (Exemple en mi) Tj ET
+BT /F1 11 Tf 60 628 Td (I = E7    IV = A7    V = B7) Tj ET
+BT /F1 11 Tf 60 610 Td (Les accords de septième donnent la couleur "blues".) Tj ET
+BT /F2 14 Tf 60 584 Td (Le rythme) Tj ET
+BT /F1 11 Tf 60 563 Td (Le shuffle : chaque temps est divisé en un triolet dont on joue) Tj ET
+BT /F1 11 Tf 60 545 Td (la première et la troisième croche \(long - court\).) Tj ET
+BT /F2 14 Tf 60 519 Td (Improviser) Tj ET
+BT /F1 11 Tf 60 498 Td (Gamme pentatonique mineure de mi : E - G - A - B - D.) Tj ET
+BT /F1 11 Tf 60 480 Td (Ajouter la "blue note" \(B bémol\) pour la gamme blues.) Tj ET
+BT /F2 14 Tf 60 454 Td (Exercice du club) Tj ET
+BT /F1 11 Tf 60 433 Td (Jouer la grille à 80 BPM, puis improviser deux tours chacun.) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000257 00000 n 
+0000000354 00000 n 
+0000000456 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+1646
+%%EOF

@@ -1,0 +1,624 @@
+/* =================================================================
+   MediaBox — feuille de style (thème automobile : carbone et orange)
+   Sommaire :
+   1. Variables (couleurs, rayons, ombres)
+   2. Base et mise en page
+   3. En-tête et pied de page
+   4. Boutons et liens d'action
+   5. Messages (succès, erreur, info)
+   6. Barre de filtre
+   7. Liste des ressources (cartes)
+   8. Formulaires
+   9. Page de confirmation
+   10. Adaptation mobile
+   ================================================================= */
+
+/* ---------- 1. Variables ---------- */
+:root {
+    --fond: #f4f4f5;
+    --surface: #ffffff;
+    --texte: #18181b;
+    --texte-doux: #71717a;
+    --bordure: #e4e4e7;
+
+    --primaire: #ea580c;
+    --primaire-fonce: #c2410c;
+
+    /* Couleurs distinctives des deux types de ressource */
+    --document: #0369a1;
+    --document-clair: #e0f2fe;
+    --favori: #7c3aed;
+    --favori-clair: #ede9fe;
+
+    --succes: #15803d;
+    --succes-clair: #dcfce7;
+    --erreur: #b91c1c;
+    --erreur-clair: #fee2e2;
+
+    --rayon: 6px;
+    --ombre: 0 1px 3px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+/* ---------- 2. Base et mise en page ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--texte);
+    background: var(--fond);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+    flex: 1;
+}
+
+main.etroit {
+    max-width: 720px;
+}
+
+h1,
+h2 {
+    line-height: 1.25;
+}
+
+a {
+    color: var(--primaire);
+}
+
+:focus-visible {
+    outline: 3px solid var(--primaire);
+    outline-offset: 2px;
+}
+
+/* Élément masqué par l'attribut hidden (bascule du formulaire) */
+[hidden] {
+    display: none !important;
+}
+
+/* Texte lu par les lecteurs d'écran mais invisible à l'écran */
+.visuellement-cache {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* ---------- 3. En-tête et pied de page ---------- */
+.entete {
+    background: linear-gradient(120deg, #0a0a0a, #27272a 65%, #3f3f46);
+    border-bottom: 4px solid var(--primaire);
+    color: #fff;
+}
+
+.entete-contenu {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icone {
+    font-size: 1.9rem;
+}
+
+.logo strong {
+    display: block;
+    font-size: 1.5rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.logo small {
+    display: block;
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+.pied {
+    text-align: center;
+    color: var(--texte-doux);
+    font-size: 0.85rem;
+    padding: 16px;
+    border-top: 1px solid var(--bordure);
+    background: var(--surface);
+}
+
+.pied p {
+    margin: 0;
+}
+
+/* ---------- 4. Boutons et liens d'action ---------- */
+.bouton {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font: inherit;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
+    background: var(--primaire);
+    color: #fff;
+    transition: background-color 0.15s, transform 0.1s;
+}
+
+.bouton:hover {
+    background: var(--primaire-fonce);
+}
+
+.bouton:active {
+    transform: translateY(1px);
+}
+
+.bouton-clair {
+    background: #fff;
+    color: var(--primaire);
+}
+
+.bouton-clair:hover {
+    background: #fff7ed;
+}
+
+.bouton-secondaire {
+    background: var(--surface);
+    color: var(--texte);
+    border-color: var(--bordure);
+}
+
+.bouton-secondaire:hover {
+    background: var(--fond);
+}
+
+.bouton-danger {
+    background: var(--erreur);
+}
+
+.bouton-danger:hover {
+    background: #991b1b;
+}
+
+/* ---------- 5. Messages ---------- */
+.message {
+    padding: 12px 16px;
+    border-radius: var(--rayon);
+    margin: 0 0 20px;
+    border-left: 5px solid;
+}
+
+.message p,
+.message ul {
+    margin: 0;
+}
+
+.message ul {
+    padding-left: 20px;
+}
+
+.message-succes {
+    background: var(--succes-clair);
+    border-color: var(--succes);
+    color: #14532d;
+}
+
+.message-erreur {
+    background: var(--erreur-clair);
+    border-color: var(--erreur);
+    color: #7f1d1d;
+}
+
+.message-info {
+    background: #ffedd5;
+    border-color: var(--primaire);
+    color: #7c2d12;
+}
+
+/* ---------- 6. Barre de filtre ---------- */
+.filtre {
+    background: var(--surface);
+    border-radius: var(--rayon);
+    box-shadow: var(--ombre);
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.filtre label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.filtre-ligne {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filtre-ligne input {
+    flex: 1 1 260px;
+}
+
+.aide {
+    margin: 6px 0 0;
+    font-size: 0.85rem;
+    color: var(--texte-doux);
+}
+
+.bilan {
+    color: var(--texte-doux);
+    margin: 0 0 16px;
+}
+
+.aucun-resultat {
+    text-align: center;
+    background: var(--surface);
+    border: 2px dashed var(--bordure);
+    border-radius: var(--rayon);
+    padding: 40px 16px;
+}
+
+.aucun-resultat p:first-child {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 0;
+}
+
+/* ---------- 7. Liste des ressources (cartes) ---------- */
+.liste-ressources {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 18px;
+}
+
+.ressource {
+    background: var(--surface);
+    border-radius: var(--rayon);
+    box-shadow: var(--ombre);
+    border-top: 5px solid;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+}
+
+.ressource.document {
+    border-top-color: var(--document);
+}
+
+.ressource.favori {
+    border-top-color: var(--favori);
+}
+
+.ressource h2 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.ressource-entete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--texte-doux);
+}
+
+/* Badge du type : couleur + icône + texte (pas seulement la couleur) */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.badge-document {
+    background: var(--document-clair);
+    color: #075985;
+}
+
+.badge-favori {
+    background: var(--favori-clair);
+    color: #5b21b6;
+}
+
+.description {
+    margin: 0;
+    color: #3f3f46;
+    font-size: 0.95rem;
+}
+
+.cible {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--texte-doux);
+    overflow-wrap: anywhere;
+}
+
+.alerte {
+    color: var(--erreur);
+    font-weight: 600;
+}
+
+/* Aperçu des documents : pochette (image), lecteur audio ou vidéo */
+.apercu-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 230px;
+    object-fit: cover;
+    border-radius: 4px;
+    background: var(--fond);
+}
+
+.apercu-media {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.mots-cles {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.mots-cles a {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: var(--fond);
+    border: 1px solid var(--bordure);
+    color: var(--texte);
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.mots-cles a:hover {
+    background: #ffedd5;
+    border-color: var(--primaire);
+}
+
+.sans-mot-cle {
+    margin: 0;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--texte-doux);
+}
+
+.actions {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid var(--bordure);
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.actions a {
+    flex: 1;
+    text-align: center;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--bordure);
+    color: var(--texte);
+}
+
+.actions a:hover {
+    background: var(--fond);
+}
+
+.actions .action-voir {
+    background: var(--primaire);
+    border-color: var(--primaire);
+    color: #fff;
+}
+
+.actions .action-voir:hover {
+    background: var(--primaire-fonce);
+}
+
+.actions .action-supprimer {
+    color: var(--erreur);
+}
+
+.actions .action-supprimer:hover {
+    background: var(--erreur-clair);
+}
+
+/* ---------- 8. Formulaires ---------- */
+.carte {
+    background: var(--surface);
+    border-radius: var(--rayon);
+    box-shadow: var(--ombre);
+    padding: 24px;
+}
+
+.carte h1 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.champ {
+    margin-bottom: 18px;
+}
+
+.champ > label,
+.champ legend {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.obligatoire {
+    color: var(--erreur);
+}
+
+input[type="text"],
+input[type="url"],
+input[type="search"],
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d4d4d8;
+    border-radius: 4px;
+    font: inherit;
+    background: #fff;
+    color: var(--texte);
+}
+
+input[type="file"] {
+    padding: 8px;
+    background: var(--fond);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--primaire);
+    outline: 3px solid rgba(234, 88, 12, 0.2);
+    outline-offset: 0;
+}
+
+/* Choix du type : deux grandes cases cliquables */
+fieldset.choix-type {
+    border: 0;
+    padding: 0;
+    margin: 0 0 18px;
+}
+
+.options-type {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.option-type {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px;
+    border: 2px solid var(--bordure);
+    border-radius: var(--rayon);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.option-type:hover {
+    border-color: #fdba74;
+}
+
+.option-type input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primaire);
+}
+
+.option-type:has(input:checked) {
+    border-color: var(--primaire);
+    background: #fff7ed;
+}
+
+.option-type small {
+    display: block;
+    font-weight: 400;
+    color: var(--texte-doux);
+}
+
+.type-fixe {
+    margin: 0 0 18px;
+}
+
+.fichier-actuel {
+    margin: 0 0 8px;
+    font-size: 0.9rem;
+}
+
+.boutons-formulaire {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+/* ---------- 9. Page de confirmation ---------- */
+.confirmation {
+    text-align: center;
+}
+
+.confirmation .titre-ressource {
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: var(--fond);
+    border-radius: 4px;
+    padding: 12px;
+    overflow-wrap: anywhere;
+}
+
+.confirmation .boutons-formulaire {
+    justify-content: center;
+}
+
+/* ---------- 10. Adaptation mobile ---------- */
+@media (max-width: 560px) {
+    .options-type {
+        grid-template-columns: 1fr;
+    }
+
+    .carte {
+        padding: 18px;
+    }
+
+    .entete-contenu {
+        justify-content: center;
+        text-align: center;
+    }
+}

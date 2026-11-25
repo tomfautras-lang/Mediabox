@@ -1,0 +1,51 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 1184 >>
+stream
+BT /F2 20 Tf 60 780 Td (Fiche théorie : les sept modes) Tj ET
+0.2 0.4 0.8 RG 2 w 60 768 m 535 768 l S
+BT /F2 14 Tf 60 732 Td (Construction) Tj ET
+BT /F1 11 Tf 60 711 Td (Chaque mode part d'un degré différent de la gamme majeure.) Tj ET
+BT /F2 14 Tf 60 685 Td (Les modes \(exemples sur do\)) Tj ET
+BT /F1 11 Tf 60 664 Td (Ionien      do ré mi fa sol la si   - majeur, lumineux) Tj ET
+BT /F1 11 Tf 60 646 Td (Dorien      ré mi fa sol la si do   - mineur avec 6te majeure \(jazz, funk\)) Tj ET
+BT /F1 11 Tf 60 628 Td (Phrygien    mi fa sol la si do ré   - mineur, couleur espagnole) Tj ET
+BT /F1 11 Tf 60 610 Td (Lydien      fa sol la si do ré mi   - majeur avec 4te augmentée, aérien) Tj ET
+BT /F1 11 Tf 60 592 Td (Mixolydien  sol la si do ré mi fa   - majeur avec 7e mineure \(rock, blues\)) Tj ET
+BT /F1 11 Tf 60 574 Td (Éolien      la si do ré mi fa sol   - mineur naturel) Tj ET
+BT /F1 11 Tf 60 556 Td (Locrien     si do ré mi fa sol la   - instable, rarement utilisé) Tj ET
+BT /F2 14 Tf 60 530 Td (Astuce) Tj ET
+BT /F1 11 Tf 60 509 Td (Pour reconnaître un mode : comparer avec la gamme majeure ou mineure) Tj ET
+BT /F1 11 Tf 60 491 Td (et repérer la note "caractéristique".) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000257 00000 n 
+0000000354 00000 n 
+0000000456 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+1691
+%%EOF
